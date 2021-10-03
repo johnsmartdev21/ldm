@@ -1,0 +1,3 @@
+az deployment group create --parameters batchAccounts_abc0682d9_name='azrswitze3333rlandnorth' location='switzerlandnorth' --resource-group switzerlandnorth --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan.json
+az deployment group create --parameters batchAccounts_abc0682d9_name='azrsouthe44444astasia' location='southeastasia' --resource-group southeastasia --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan2.json
+az deployment group create --parameters batchAccounts_abc0682d9_name='azrea6666stus' location='eastus' --resource-group eastus --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan3.json
