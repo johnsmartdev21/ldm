@@ -22,12 +22,12 @@ az group create --name eastasia --location eastasia
 az group create --name germanywestcentral --location germanywestcentral
 az group create --name norwayeast --location norwayeast
 az group create --name uaenorth --location uaenorth
-az group create --name brazilsouth --location brazilsouth 
+az group create --name brazilsouth --location brazilsouth
 az group create --name ukwest --location ukwest
 az group create --name canadaeast --location canadaeast
 az group create --name southindia --location southindia
 az group create --name koreasouth --location koreasouth
-az group create --name australiacentral --location australiacentral  
+az group create --name australiacentral --location australiacentral
 az group create --name australiasoutheast --location australiasoutheast
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrswitzerlandnorth' location='switzerlandnorth' --resource-group switzerlandnorth --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrsoutheastasia' location='southeastasia' --resource-group southeastasia --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan2.json
