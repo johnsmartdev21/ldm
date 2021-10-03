@@ -40,7 +40,7 @@
         {
             "type": "Microsoft.Batch/batchAccounts/pools",
             "apiVersion": "2021-06-01",
-            "name": "[concat([variables('uniqueStorageName')], '/', [variables('uniqueStorageName')], 'p')]",
+            "name": "[concat([variables('uniqueStorageName')], '-', 'p')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Batch/batchAccounts', [variables('uniqueStorageName')])]"
             ],
@@ -93,7 +93,7 @@
         {
             "type": "Microsoft.Batch/batchAccounts/pools",
             "apiVersion": "2021-06-01",
-            "name": "[concat([variables('uniqueStorageName')], '/', [variables('uniqueStorageName')], 't')]",
+            "name": "[concat([variables('uniqueStorageName')], '-', 't')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Batch/batchAccounts', [variables('uniqueStorageName')])]"
             ],
