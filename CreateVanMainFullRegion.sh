@@ -23,11 +23,15 @@ az group create --name germanywestcentral --location germanywestcentral
 az group create --name norwayeast --location norwayeast
 az group create --name uaenorth --location uaenorth
 az group create --name brazilsouth --location brazilsouth
+az group create --name westcentralus --location westcentralus
+az group create --name japanwest --location japanwest
+az group create --name westindia --location westindia
 az group create --name ukwest --location ukwest
 az group create --name canadaeast --location canadaeast
 az group create --name southindia --location southindia
 az group create --name koreasouth --location koreasouth
 az group create --name australiacentral --location australiacentral
+az group create --name australiacentral2 --location australiacentral2
 az group create --name australiasoutheast --location australiasoutheast
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrswitzerlandnorth' location='switzerlandnorth' --resource-group switzerlandnorth --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrsoutheastasia' location='southeastasia' --resource-group southeastasia --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan2.json
@@ -54,9 +58,13 @@ az deployment group create --parameters batchAccounts_abc0682d9_name='azrgermany
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrnorwayeast' location='norwayeast' --resource-group norwayeast --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan23.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azruaenorth' location='uaenorth' --resource-group uaenorth --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan24.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrbrazilsouth' location='brazilsouth' --resource-group brazilsouth --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan25.json
+az deployment group create --parameters batchAccounts_abc0682d9_name='azrwestcentralus' location='westcentralus' --resource-group westcentralus --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan25.json
+az deployment group create --parameters batchAccounts_abc0682d9_name='azrjapanwest' location='japanwest' --resource-group japanwest --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan25.json
+az deployment group create --parameters batchAccounts_abc0682d9_name='azrwestindia' location='westindia' --resource-group westindia --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan25.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrukwest' location='ukwest' --resource-group ukwest --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan29.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrcanadaeast' location='canadaeast' --resource-group canadaeast --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan30.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrsouthindia' location='southindia' --resource-group southindia --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan31.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azrkoreasouth' location='koreasouth' --resource-group koreasouth --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan32.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azraustraliacentral' location='australiacentral' --resource-group australiacentral --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan33.json
+az deployment group create --parameters batchAccounts_abc0682d9_name='azraustraliacentral2' location='australiacentral2' --resource-group australiacentral2 --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan33.json
 az deployment group create --parameters batchAccounts_abc0682d9_name='azraustraliasoutheast' location='australiasoutheast' --resource-group australiasoutheast --no-wait --template-uri https://raw.githubusercontent.com/johnsmartdev21/ldm/main/EthTemplateMainVan35.json
