@@ -13,7 +13,7 @@
         }
     },
     "variables": {
-		"uniqueStorageName": "[concat(parameters('storagePrefix'), uniqueString(resourceGroup().id))]"
+		"uniqueStorageName": "[concat(parameters('storagePrefix'), '-', uniqueString(resourceGroup().id))]"
 	},
     "resources": [
         {
